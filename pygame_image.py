@@ -27,7 +27,8 @@ def main():
 
         key_lst = pg.key.get_pressed() # 練習8-3 全キーの押下状態取得
         
-        # 練習8-4 方向キーの押下状態を繁栄
+        # 練習8-4 方向キーの押下状態を反映
+        
         if key_lst[pg.K_UP]:
             kk_rct.move_ip(0,-1)
         if key_lst[pg.K_DOWN]:
@@ -35,7 +36,9 @@ def main():
         if key_lst[pg.K_LEFT]:
             kk_rct.move_ip(-1,0)
         if key_lst[pg.K_RIGHT]:
-            kk_rct.move_ip(1,0)
+            kk_rct.move_ip(2,0)
+
+        kk_rct.move_ip(-1,0)
         
 
 
