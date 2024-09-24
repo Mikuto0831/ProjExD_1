@@ -15,13 +15,13 @@ def main():
     kk_img = pg.transform.flip(kk_img, True, False)
     # ここまで
 
-    tmr = 0
+    tmr = 0 # 時間保存
 
     while True:
         for event in pg.event.get():
             if event.type == pg.QUIT: return
 
-        screen.blit(bg_img, [0, 0])
+        screen.blit(bg_img, [-(tmr % 800), 0])
         screen.blit(kk_img, [300,200])
         pg.display.update()
         tmr += 1        
