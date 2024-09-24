@@ -10,6 +10,7 @@ def main():
     screen = pg.display.set_mode((800, 600))
     clock  = pg.time.Clock()
     bg_img = pg.image.load("fig/pg_bg.jpg")
+    bg_imgs = [bg_img, pg.transform.flip(bg_img, True, False)]
     # ここから 練習2
     kk_img = pg.image.load("fig/3.png")
     kk_img = pg.transform.flip(kk_img, True, False)
@@ -21,7 +22,10 @@ def main():
         for event in pg.event.get():
             if event.type == pg.QUIT: return
 
-        screen.blit(bg_img, [-(tmr % 800), 0])
+        # 練習7
+        for i in range(4):
+            screen.blit(bg_imgs[i%2], [-(tmr % 3200)+1600*i, 0])
+        
         screen.blit(kk_img, [300,200])
         pg.display.update()
         tmr += 1        
