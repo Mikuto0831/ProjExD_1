@@ -27,18 +27,12 @@ def main():
 
         key_lst = pg.key.get_pressed() # 練習8-3 全キーの押下状態取得
         
-        # 練習8-4 方向キーの押下状態を反映
-        
-        if key_lst[pg.K_UP]:
-            kk_rct.move_ip(0,-1)
-        if key_lst[pg.K_DOWN]:
-            kk_rct.move_ip(0,1)
-        if key_lst[pg.K_LEFT]:
-            kk_rct.move_ip(-1,0)
-        if key_lst[pg.K_RIGHT]:
-            kk_rct.move_ip(2,0)
-
-        kk_rct.move_ip(-1,0)
+        # 練習8-4 方向キーの押下状態を繁栄
+        kk_rct_tmp = (
+            key_lst[pg.K_RIGHT] * 2 + key_lst[pg.K_LEFT] * (-1) - 1,
+            key_lst[pg.K_UP] * (-1) + key_lst[pg.K_DOWN] * 1
+            )
+        kk_rct.move_ip(kk_rct_tmp)
         
 
 
